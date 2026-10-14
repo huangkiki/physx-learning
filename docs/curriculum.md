@@ -1,12 +1,14 @@
-# PhysX 两条学习路线
+# PhysX Learning 两条学习路线
 
 [首篇导读](guide.md)已经建立对象关系和核心入口；它不代表下面全部专题已经完成。[源码地图](source-map.md)提供固定提交入口。
+
+有 VLA、WAM 或 RL 背景的读者可先读 [Physics-Based Simulation 先修路线](https://github.com/huangkiki/sim-learning/blob/main/docs/physics-based-simulation.md)，再读新增的 [solver 配置解读](solver-reading-guide.md)，将共同概念映射到原生设置；本篇只做来源与静态验收，不恢复 A0 完整安装或 E7 全路线审校。
 
 应用路线无需先学求解器源码；原理路线建议先理解 A0–A4，并具备线性代数和基础动力学知识。两条路线都完整规划，当前以讲解、源码与最小 API 片段为交付物。
 
 | 单元 | 主题 | 必须讲清的内容 | 状态 |
 |---|---|---|---|
-| A0 | 安装与对象地图 | 支持环境、包/核心/宿主身份、构建入口、核心对象及生命周期 | 专题待 E7 |
+| A0 | 安装与对象地图 | 支持环境、包/核心/宿主身份、构建入口、核心对象及生命周期 | 独立待办；E7 暂停 |
 | A1 | 模型、坐标与资产 | 单位、坐标、姿态、惯量、碰撞/视觉、导入器、资产许可 | [E1 已交付](modeling-state-time.md)；[E2 资产/关节映射](control-robotics.md)，宿主导入运行未验收 |
 | A2 | 状态与时间 | 配置/速度维度、时间步/子步、reset、快照、所有权、采样阶段 | [E1 已交付](modeling-state-time.md)，未做运行验收 |
 | A3 | 驱动与控制 | 状态设置与控制命令、驱动器、饱和、PD、回调与控制频率 | [E2 源码课程已交付](control-robotics.md)，未运行控制器 |
@@ -23,6 +25,6 @@
 | B4 | 积分与数值语义 | 积分器/solver/子步的区别、精度、容差、稳定性假设及可微限制 | [E1 时间边界已交付](modeling-state-time.md)；[E3 CPU PGS/TGS 积分与数值限制已交付](contact-solvers.md)，[E6 可微与 FEM 数值边界已交付](extensions-boundaries.md)，无可微实现或运行稳定性验收 |
 | B5 | 力与冲量观测 | 广义/空间/约束量、坐标转换、平均力、采样时刻与近似 | [E3 接触源码课](contact-solvers.md)与 [E4 关节传力/加速度观测](sensors-rendering.md)已交付，未运行仿真；参考帧与有效性边界明确 |
 | B6 | 性能、并行与扩展 | 编译/JIT/步进/拷贝/渲染边界、插件/回调、线程与扩展接口 | [E5 调度/数据/同步](batch-learning-data.md)与 [E6 自定义扩展/GPU 源码边界](extensions-boundaries.md)已交付，无性能实测 |
-| B7 | 源码综合导读 | 从模型字段到控制/接触/求解/观测的完整追踪、限制及 DexLab 证据索引 | [E6 DistanceJoint 配置到输出追踪已交付](extensions-boundaries.md)，串联 E1–E5；全路线审校与 DexLab 入口待 E7，未运行 SDK |
+| B7 | 源码综合导读 | 从模型字段到控制/接触/求解/观测的完整追踪、限制及 DexLab 证据索引 | [E6 DistanceJoint 配置到输出追踪已交付](extensions-boundaries.md)，串联 E1–E5；[solver 配置与 DexLab 批次入口](solver-reading-guide.md)已补充；全路线审校仍待 E7（暂停），未运行 SDK |
 
 本引擎特别关注：C++ SDK、Scene/Actor/Shape/Material、articulation、PGS/TGS 与宿主边界。各课需提供先修、概念/公式、原生接口与固定源码、易错点、阅读练习和适用边界。实验不作为本阶段先决条件；后续复用 DexLab，避免重新建设一套评分和基准系统。

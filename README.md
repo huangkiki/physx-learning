@@ -1,12 +1,14 @@
-# PhysX Atlas
+# PhysX Learning
 
 **理解 PhysX 的建模、控制、物理机制与源码实现。**
 
-[Sim Atlas 系列首页](https://github.com/huangkiki/sim-atlas) · [English](README.en.md) · [入门导读](docs/guide.md) · [完整课程路线](docs/curriculum.md) · [源码地图](docs/source-map.md) · [版本](docs/versions.md) · [开发任务](docs/roadmap.md) · [六仓总看板](https://github.com/users/huangkiki/projects/2)
+[Sim Learning 系列首页](https://github.com/huangkiki/sim-learning) · [English](README.en.md) · [入门导读](docs/guide.md) · [Solver 配置解读](docs/solver-reading-guide.md) · [完整课程路线](docs/curriculum.md) · [源码地图](docs/source-map.md) · [版本](docs/versions.md) · [开发任务](docs/roadmap.md) · [六仓总看板](https://github.com/users/huangkiki/projects/2)
 
-这是 **[Sim Atlas · 仿真图谱](https://github.com/huangkiki/sim-atlas)** 的独立社区学习仓库，重点覆盖 C++ SDK、Scene/Actor/Shape/Material、articulation、PGS/TGS 与宿主边界。
+这是 **[Sim Learning · 仿真学习](https://github.com/huangkiki/sim-learning)** 的独立社区学习仓库，重点覆盖 C++ SDK、Scene/Actor/Shape/Material、articulation、PGS/TGS 与宿主边界。
 
-提供两条完整路线：**A 应用路线**从对象与建模走向控制、机器人、传感器、学习接口与数据；**B 原理与源码路线**解释动力学、接触模型、求解器、积分、观测及扩展。已交付首篇导读和 [E1 建模、坐标、状态与时间](docs/modeling-state-time.md)：从原生对象/资产到质心惯量、articulation 缓存与步进边界。[E2 驱动、机器人与任务接口](docs/control-robotics.md)已补齐原生输入、隐式 drive、资产/关节映射、FK/Jacobian 与任务调度。[E3 接触、求解器与力观测](docs/contact-solvers.md)继续追踪材料组合、PGS/TGS、积分与法向/切向冲量读回。[E4 传感、查询与调试显示](docs/sensors-rendering.md)讲清查询过滤/更新时间、力与加速度观测、PVD/OmniPVD 以及宿主 RGB/depth/分割的职责。[E5 批量、学习接口与数据](docs/batch-learning-data.md)继续解释 Scene 隔离、任务调度、Direct GPU 布局/同步、reset、随机化和对象序列化。[E6 原生扩展与能力边界](docs/extensions-boundaries.md)补齐自定义几何/约束/回调、配置到求解输出的追踪、公开 GPU/FEM/粒子实现与可微边界。A0 安装专题和 E7 双路线审校仍待完成；源码课程完成与实际运行验收分别记录。
+提供两条完整路线：**A 应用路线**从对象与建模走向控制、机器人、传感器、学习接口与数据；**B 原理与源码路线**解释动力学、接触模型、求解器、积分、观测及扩展。已交付首篇导读和 [E1 建模、坐标、状态与时间](docs/modeling-state-time.md)：从原生对象/资产到质心惯量、articulation 缓存与步进边界。[E2 驱动、机器人与任务接口](docs/control-robotics.md)已补齐原生输入、隐式 drive、资产/关节映射、FK/Jacobian 与任务调度。[E3 接触、求解器与力观测](docs/contact-solvers.md)继续追踪材料组合、PGS/TGS、积分与法向/切向冲量读回。[E4 传感、查询与调试显示](docs/sensors-rendering.md)讲清查询过滤/更新时间、力与加速度观测、PVD/OmniPVD 以及宿主 RGB/depth/分割的职责。[E5 批量、学习接口与数据](docs/batch-learning-data.md)继续解释 Scene 隔离、任务调度、Direct GPU 布局/同步、reset、随机化和对象序列化。[E6 原生扩展与能力边界](docs/extensions-boundaries.md)补齐自定义几何/约束/回调、配置到求解输出的追踪、公开 GPU/FEM/粒子实现与可微边界。A0 完整安装与 E7 双路线审校继续暂停，保留独立待办；源码课程完成与实际运行验收分别记录。
+
+熟悉 VLA、WAM 或 RL 的读者可先读 [Physics-Based Simulation 先修路线](https://github.com/huangkiki/sim-learning/blob/main/docs/physics-based-simulation.md)，再用 [PhysX solver 配置解读](docs/solver-reading-guide.md)区分 PGS/TGS、surface cloth、patch friction、迭代开关与证据状态。正文为中文，保留英文术语和摘要。当前源码头文件 5.11.0 与 DexLab 原生斜面 5.9.0、历史宿主身份分别记录。
 
 ## 从这里开始
 
@@ -24,6 +26,8 @@
 
 ## 维护与来源
 
-每章保留原生 API、版本化来源、易错点和阅读练习。各 Atlas 仓库独立，不需要安装其他 Atlas 或 DexLab。教程进度和 DexLab 实验证据覆盖分别记录，不据此给引擎排名。
+每章保留原生 API、版本化来源、易错点和阅读练习。各 Learning 仓库独立，不需要安装其他 Learning 仓库或 DexLab。教程进度和 DexLab 实验证据覆盖分别记录，不据此给引擎排名。
+
+改名的历史记录与代码标识例外见[迁移和静态检查记录](docs/learning-migration.md)。
 
 [官方源码基线](https://github.com/NVIDIA-Omniverse/PhysX/tree/da950a3537927784951853c66618036f332ca0ce) · [贡献](CONTRIBUTING.md) · [来源与许可](THIRD_PARTY.md)

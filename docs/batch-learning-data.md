@@ -1,6 +1,6 @@
 # E5：批量场景、学习接口与数据
 
-[Sim Atlas 学习首页](https://github.com/huangkiki/sim-atlas) · [完整课程](curriculum.md) · [源码地图](source-map.md) · [本章检查](validation/e5.md)
+[Sim Learning 学习首页](https://github.com/huangkiki/sim-learning) · [完整课程](curriculum.md) · [源码地图](source-map.md) · [本章检查](validation/e5.md)
 
 先修 [E2 控制与机器人](control-robotics.md)和 [E4 观测与显示](sensors-rendering.md)；reset 的 frame/cache 基础见 [E1](modeling-state-time.md)。本章完成 A8/A9 和 B6 的批量组织、数据传递、调度与扩展接口课程。具体 GPU 内核、特色几何和自定义约束的完整实现仍由 E6 展开。
 

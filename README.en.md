@@ -1,12 +1,12 @@
-# PhysX Atlas
+# PhysX Learning
 
 Understand PhysX through native APIs, physics concepts and versioned source code.
 
-[Sim Atlas home](https://github.com/huangkiki/sim-atlas) · [中文](README.md) · [Introductory guide](docs/guide.md) · [Curriculum](docs/curriculum.md) · [Source map](docs/source-map.md) · [Versions](docs/versions.md) · [Roadmap](docs/roadmap.md) · [Project tracker](https://github.com/users/huangkiki/projects/2)
+[Sim Learning home](https://github.com/huangkiki/sim-learning) · [中文](README.md) · [Introductory guide](docs/guide.md) · [Solver reading guide](docs/solver-reading-guide.md) · [Curriculum](docs/curriculum.md) · [Source map](docs/source-map.md) · [Versions](docs/versions.md) · [Roadmap](docs/roadmap.md) · [Project tracker](https://github.com/users/huangkiki/projects/2)
 
-Part of **[Sim Atlas](https://github.com/huangkiki/sim-atlas)**, an independent community learning series with two complete planned tracks: applications (modeling, control, robotics, sensing and data) and principles/source (dynamics, contact, solvers, integration and extensions).
+Part of **[Sim Learning](https://github.com/huangkiki/sim-learning)**, an independent community learning series with two complete planned tracks: applications (modeling, control, robotics, sensing and data) and principles/source (dynamics, contact, solvers, integration and extensions).
 
-The initial guide and pinned source map are available in Chinese.
+The initial guide and pinned source map are available in Chinese. Readers experienced in VLA, WAM or RL can follow the shared [Physics-Based Simulation prerequisites](https://github.com/huangkiki/sim-learning/blob/main/docs/physics-based-simulation.md), then the [PhysX solver reading guide](docs/solver-reading-guide.md). It separates PGS/TGS, surface cloth, patch friction, update flags and evidence status, with answered exercises and an English summary. Course headers 5.11.0, DexLab standalone SDK 5.9.0 and historical host identities remain distinct.
 
 [E1: Modeling, frames, state and time](docs/modeling-state-time.md) now covers native object ownership, collision assets/cooking, units and quaternion conventions, actor/shape/COM frames, inertia, articulation cache indexing and reset, and the simulate/fetchResults boundary. The [native C++ reading example](examples/e1_state_boundary.cpp) and [validation record](docs/validation/e1.md) distinguish source/compile-only checks from runtime validation. E1 delivers A1/A2 and the relevant B0/B4 foundations; the CPU contact solver/integration analysis is now covered by E3.
 
@@ -18,8 +18,10 @@ The initial guide and pinned source map are available in Chinese.
 
 [E5: Batching, learning interfaces and data](docs/batch-learning-data.md) covers independent scenes versus filtered groups in one scene, CPU task scheduling, GPU/Direct GPU ownership and events, padded articulation layouts, reset and randomization, host-owned RL transitions, dataset records, object serialization and replay limits. Its [native C++ fragments](examples/e5_batch_boundaries.cpp) are syntax/type checked only; [E5 validation](docs/validation/e5.md) records evidence. A8/A9 and the B6 scheduling/data/extension interfaces are delivered as source lessons; detailed GPU paths and custom engine extensions are covered separately by E6. No learning environment, training, throughput or replay has been run.
 
-[E6: Native extensions and capability boundaries](docs/extensions-boundaries.md) explains custom geometry/constraint/callback contracts, a complete CPU DistanceJoint path from configuration through solver rows to force readback, public GPU source and CPU fallback, FEM volume/surface and PBD particle data/numerical paths, and the distinction between native coupling, host services and end-to-end differentiation. The [original row-prep fragment](examples/e6_constraint_row.cpp) passes syntax/type checks only; it is not a complete plugin and was not executed. [E6 validation](docs/validation/e6.md) records source identity, checks and limits. B6/B7 source lessons are delivered; A0 installation and the E7 course-wide audit remain pending. No SDK build, CUDA compilation/JIT or native runtime has been performed.
+[E6: Native extensions and capability boundaries](docs/extensions-boundaries.md) explains custom geometry/constraint/callback contracts, a complete CPU DistanceJoint path from configuration through solver rows to force readback, public GPU source and CPU fallback, FEM volume/surface and PBD particle data/numerical paths, and the distinction between native coupling, host services and end-to-end differentiation. The [original row-prep fragment](examples/e6_constraint_row.cpp) passes syntax/type checks only; it is not a complete plugin and was not executed. [E6 validation](docs/validation/e6.md) records source identity, checks and limits. B6/B7 source lessons are delivered; A0 full installation and the E7 course-wide audit remain paused as separate backlog items. No SDK build, CUDA compilation/JIT or native runtime has been performed.
 
 This phase prioritizes understanding engine subsystems. Minimal snippets support explanation and are explicitly marked when unexecuted. No new simulation campaigns, benchmarks, training or scoring are included; later experimental material will reuse [DexLab](https://github.com/huangkiki/Dexlab) with its original version and workload boundaries.
 
 [Pinned upstream source](https://github.com/NVIDIA-Omniverse/PhysX/tree/da950a3537927784951853c66618036f332ca0ce) · [Attribution](THIRD_PARTY.md)
+
+[Learning migration and static checks](docs/learning-migration.md) list preserved historical records and code identifiers.

@@ -1,6 +1,6 @@
 # E3：接触、求解器与力观测
 
-[Sim Atlas 学习首页](https://github.com/huangkiki/sim-atlas) · [课程路线](curriculum.md) · [源码地图](source-map.md) · [E3 检查与限制](validation/e3.md)
+[Sim Learning 学习首页](https://github.com/huangkiki/sim-learning) · [课程路线](curriculum.md) · [源码地图](source-map.md) · [E3 检查与限制](validation/e3.md)
 
 先修：[E1](modeling-state-time.md) 的 Actor/Shape/COM、惯量和步进边界；[E2](control-robotics.md) 可帮助区分 drive 输入与求解后的接触响应。本章连接 A4 与 B1–B5，并补足 B0 的约束行/求解数据基础。应用读者可先读第 1–3、7–9 节，源码读者按顺序阅读。
 
