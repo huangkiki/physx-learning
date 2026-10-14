@@ -1,6 +1,6 @@
 # E4：传感、场景查询与调试显示
 
-[Sim Atlas 学习首页](https://github.com/huangkiki/sim-atlas) · [完整课程](curriculum.md) · [源码地图](source-map.md) · [本章检查](validation/e4.md)
+[Sim Learning 学习首页](https://github.com/huangkiki/sim-learning) · [完整课程](curriculum.md) · [源码地图](source-map.md) · [本章检查](validation/e4.md)
 
 先修 [E1](modeling-state-time.md) 的 frame、状态所有权与 `simulate/fetchResults`；力观测接续 [E3](contact-solvers.md)。本章完成 A6 的原生能力与应用边界：先识别要观测的量，再选择查询、动力学数据或宿主图像管线。它不是相机/雷达产品实现或运行验收。
 

@@ -1,6 +1,6 @@
 # E6：原生扩展、GPU 与能力边界
 
-[Sim Atlas 学习首页](https://github.com/huangkiki/sim-atlas) · [完整路线](curriculum.md) · [源码地图](source-map.md) · [本章验收](validation/e6.md)
+[Sim Learning 学习首页](https://github.com/huangkiki/sim-learning) · [完整路线](curriculum.md) · [源码地图](source-map.md) · [本章验收](validation/e6.md)
 
 先修：[E1 对象/COM/时间](modeling-state-time.md)、[E2 驱动](control-robotics.md)、[E3 接触与求解](contact-solvers.md)；GPU 所有权和同步可先看 [E5](batch-learning-data.md)。本章完成 B6 的原生扩展/后端边界与 B7 综合追踪，也补充 B0/B4 的非刚体状态和数值语义。
 
